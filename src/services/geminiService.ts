@@ -1,7 +1,8 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 import { FileContent } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+// Fix: Aligned `GoogleGenAI` initialization with the coding guidelines by removing the type assertion.
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export function startMultiFileChat(filesContent: FileContent[]): Chat {
   const model = 'gemini-2.5-flash';
